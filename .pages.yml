@@ -1,0 +1,51 @@
+media:
+  input: assets/img
+  output: /assets/img
+
+content:
+  - name: projets
+    label: Projets
+    type: file
+    path: content/projets.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Titre
+        type: string
+      - name: image
+        label: Image (vignette)
+        type: image
+      - name: desc
+        label: Description courte
+        type: text
+      - name: tags
+        label: Catégories
+        type: select
+        list: true
+        options:
+          values:
+            - { value: web, label: Web }
+            - { value: comm, label: Communication }
+            - { value: social, label: Social media }
+            - { value: branding, label: Branding }
+            - { value: video, label: Vidéo }
+            - { value: recherche, label: Recherche }
+            - { value: event, label: Event }
+      - name: featured
+        label: Mettre en avant sur l'accueil
+        type: boolean
+
+  - name: creations
+    label: Créations
+    type: file
+    path: content/creations.json
+    format: json
+    list: true
+    fields:
+      - name: image
+        label: Image
+        type: image
+      - name: alt
+        label: Légende (texte alternatif)
+        type: string
